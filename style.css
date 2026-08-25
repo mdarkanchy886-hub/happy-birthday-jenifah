@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a1a;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Neon Text Styling */
+.neon-text {
+    font-weight: bold;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    color: #0ff;
+    letter-spacing: 2px;
+}
+
+.main-text {
+    font-size: 4rem;
+    animation: flicker 0.15s infinite, glow 2s ease-in-out infinite;
+    text-transform: uppercase;
+}
+
+.name-text {
+    font-size: 3.5rem;
+    color: #ff1493;
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493;
+    animation: flicker 0.15s infinite, glow 2s ease-in-out infinite;
+}
+
+.sub-text {
+    font-size: 1.2rem;
+    color: #00ffff;
+    margin-top: 20px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Content */
+.content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+/* Cake */
+.cake {
+    margin: 40px 0;
+    font-size: 4rem;
+    animation: bounce 2s infinite;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -30px;
+}
+
+.candle {
+    font-size: 2rem;
+    animation: flicker 0.5s infinite;
+}
+
+/* Button */
+.surprise-btn {
+    background: linear-gradient(45deg, #ff1493, #00ffff);
+    color: white;
+    border: 2px solid #0ff;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
+    box-shadow: 0 0 20px #0ff, 0 0 40px #ff1493;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.surprise-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #0ff, 0 0 60px #ff1493;
+}
+
+.surprise-btn:active {
+    transform: scale(0.95);
+}
+
+/* Message Box */
+.message-box {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #0ff;
+    border-radius: 10px;
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.message-box p {
+    color: #0ff;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* Stars Background */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 60px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 10px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite;
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: fall 3s linear infinite;
+    opacity: 0.7;
+}
+
+/* Floating Emojis */
+.floating-emojis {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: 0 0 5px #0ff;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
+    50% {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px);
+    }
+    75% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes celebrate {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 2.5rem;
+    }
+    
+    .name-text {
+        font-size: 2rem;
+    }
+    
+    .sub-text {
+        font-size: 1rem;
+    }
+    
+    .surprise-btn {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+    
+    .cake {
+        font-size: 2.5rem;
+    }
+}
